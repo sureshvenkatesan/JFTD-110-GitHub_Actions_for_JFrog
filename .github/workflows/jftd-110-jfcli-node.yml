@@ -13,7 +13,7 @@ env:
   NODE_VERSION: "20" # Node version to use
   JOB_SUMMARY: false
   JFROG_CLI_LOG_LEVEL: DEBUG # DEBUG, INFO, WARN, ERROR
-  WORKSPACE_TYPESCRIPT_REACT: "JFTD-110-GitHub_Actions_for_JFrog/helloworld_npm"
+  WORKSPACE: "helloworld_npm"
   RT_REPO_NPM_VIRTUAL: "lab110-npm-virtual"
   RT_REPO_NPM_DEFAULT_LOCAL: "lab110-npm-sandbox-local"
   # EVIDENCE_JSON: "my-evidence.json"
@@ -28,7 +28,7 @@ jobs:
       BUILD_ID: "ga-npm-${{github.run_number}}"
     defaults:
        run:
-         working-directory: ${{env.WORKSPACE_TYPESCRIPT_REACT}}
+         working-directory: ${{env.WORKSPACE}}
     steps:
       - name: "Clone VCS"
         continue-on-error: true
