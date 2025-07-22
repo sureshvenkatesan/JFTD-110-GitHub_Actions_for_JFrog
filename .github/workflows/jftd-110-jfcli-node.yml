@@ -8,7 +8,7 @@ permissions:
   contents: read
   security-events: write # Required for uploading code scanning.
 env:
-  JF_RT_URL: "https://${{vars.JF_NAME}}.jfrog.io"
+  # JF_RT_URL: "https://${{vars.JF_NAME}}.jfrog.io"
   # BUILD_ID: "ga-${{github.run_number}}"
   NODE_VERSION: "20" # Node version to use
   JOB_SUMMARY: true
@@ -37,7 +37,7 @@ jobs:
       - name: "Setup JFrog CLI"
         uses: jfrog/setup-jfrog-cli@v4
         env:
-          JF_URL: ${{ env.JF_RT_URL }}
+          JF_URL: ${{ vars.JF_URL }}
         with:
           oidc-provider-name: ${{ vars.JF_OIDC_PROVIDER_NAME }}
 
