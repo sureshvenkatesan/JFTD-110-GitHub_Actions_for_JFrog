@@ -31,6 +31,8 @@ do
 done
 log_task "Artifactory is responding"
 
+jf c rm academy1 --quiet
+
 while true; do
     # Try with access token first
     jf config add academy1 \
